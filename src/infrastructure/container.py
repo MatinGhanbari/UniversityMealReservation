@@ -25,6 +25,7 @@ class Container:
         # Inject the dependencies of the class
         dependencies = inspect.signature(cls.__init__).parameters
         for parameter in dependencies:
+            if type(parameter) is str: continue
             if parameter.default is not inspect.Parameter.empty:
                 continue
 

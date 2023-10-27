@@ -1,5 +1,6 @@
 # Idea files
 .idea
+__pycache__/
 
 # Config files
 config.json

@@ -2,7 +2,7 @@ import telegram
 from telegram import Update
 from telegram.ext import CommandHandler, ContextTypes
 
-from src.application.telegram_bot.messages import start_command, help_command, welcome, help
+from src.application.telegram_bot.constants.messages import start_command, help_command, welcome, help
 
 
 def register_command_handlers(app):

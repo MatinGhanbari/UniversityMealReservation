@@ -1,30 +1,74 @@
-# Dining Reservation
 
-![](C:\Users\Asus\Desktop\UniversityMealReservation\assets\images\banner.jpg)
+# University Meal Reservation
+This Telegram bot allows you to reserve meals at your university. It's a convenient and easy way to make sure you have a meal waiting for you when you're hungry.
 
-## 🍟 University Food Reservation Bot
-
-* Telegram Bot: [T.ME/University_Reservation_Bot](https://t.me/University_Reservation_Bot)
-
-## 🌵 Features Of The Bot:
-
-1. **Food reservation**: Students can use the bot to reserve food.
-2. **Automatic food reservation**: university food reservation robot can automatically reserve food for students based on their preferences.
-3. **Display reservations and meals for this week and next week**: Students can view their reservations and the meals available for the current week and the next week.
-4. **Get and share forget code**: Students can get and share a forget code.
-
-## 💬 Contact Us:
-If you have any questions or feedback, please contact us at:
-
-. **[Telegram: MatinGhanbari](https://t.me/Ghanbari_Matin)**
+![Logo](assets/images/logo.png)
 
 
-##  👥 How To Contribute
-We welcome contributions to the DiningReservation project. If you would like to contribute, please follow these steps:
-1. Fork the repository.
-2. Create a new branch.
-3. Make your changes. 
-4. Submit a pull request.
+## Features
+- Reserve foods
+- Auto reserve foods
+- Show reserved foods
+- Share forgot code
+- Change cv2 password
+- Show recent actions
 
-## ❤️ Support Us
-### **If you find the university food reservation robot useful, please give this project a star ⭐ to support us.**
+
+## Documentation
+See [How to Use The Bot](https://linktodocumentation) for working with the **University Meal Reservation** bot.
+
+## Run Locally
+1. Clone the project:
+    ```bash
+      git clone https://github.com/MatinGhanbari/UniversityMealReservation.git
+    ```
+
+2. Go to the project directory:
+    ```bash
+      cd UniversityMealReservation
+    ```
+
+3. Create your config file:
+    ```bash
+      config.json
+    ```
+
+4. Start the bot:
+    ```bash
+      python src/main.py
+    ```
+
+
+## Running Tests
+1. Go to the project directory.
+2. To run tests, run the following command:
+    ```bash
+      python src/tests.py
+    ```
+
+
+## Contributing
+Contributions are always welcome!
+
+Please see [CONTRIBUTING.md](CONTRIBUTING.md) for ways to get started.
+
+## Authors
+- [@MatinGhanbari](https://www.github.com/MatinGhanbari)
+
+## FAQ
+
+#### Q: Is my password secure in this bot?
+- A: Yes, your password is hashed using a strong algorithm to make it secure. This means that your password is converted into a string of random characters that cannot be easily reversed. Even if someone were to gain access to our database, they would not be able to read your password.
+
+    
+#### Q: What happens to my data when I log out of the bot? 
+- A: When you log out of the bot, your personal information, such as your username and password, is deleted from the bot's database. This ensures that your data is protected and cannot be accessed by others.
+
+## Screenshots
+| Commands    | Screenshots |
+|-------------| ------------- |
+| Start | ![screenshot_1](assets/images/screenshots/screenshot_1.png) |
+| Help | ![screenshot_1](assets/images/screenshots/screenshot_2.png) |
+
+## Support & Feedback
+If you have any support questions or feedback, please reach out to us in the bot's support section using the `/support` command. (Please include images when they enhance the content.)

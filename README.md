@@ -16,7 +16,7 @@ meal waiting for you when you're hungry.
 
 ## Documentation
 
-See [How to Use The Bot](https://linktodocumentation) for working with the **University Meal Reservation** bot.
+See [How to Use The Bot](assets/docs/how_to_use.pdf) for working with the **University Meal Reservation** bot.
 
 ## Run Locally
 

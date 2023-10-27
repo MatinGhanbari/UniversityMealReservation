@@ -1,2 +1,5 @@
 # Idea files
 .idea
+
+# Config files
+config.json

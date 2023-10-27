@@ -1,4 +1,5 @@
 from src.infrastructure.config import Config
+from src.infrastructure.logger import Logger
 
 
 class ServiceRegistrar:
@@ -8,3 +9,4 @@ class ServiceRegistrar:
     def register_services(self):
         # Register the Config class
         self.container.register(Config, lambda: Config().load())
+        self.container.register(Logger, lambda: Logger("UniversityMealReservation"))

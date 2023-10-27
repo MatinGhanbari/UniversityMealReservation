@@ -14,4 +14,4 @@ class Config:
         self.api_key = config["api_key"]
 
         # Return the configuration
-        return config
+        return self

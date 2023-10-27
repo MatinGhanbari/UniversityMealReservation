@@ -1,7 +1,10 @@
 from src.infrastructure.config import Config
-from src.infrastructure.container import Container
 
-container = Container()
 
-# Register the Config class
-container.register(Config, lambda: Config().load())
+class ServiceRegistrar:
+    def __init__(self, container):
+        self.container = container
+
+    def register_services(self):
+        # Register the Config class
+        self.container.register(Config, lambda: Config().load())

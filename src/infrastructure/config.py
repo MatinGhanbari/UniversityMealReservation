@@ -15,3 +15,19 @@ class Config:
 
         # Return the configuration
         return self
+
+
+class MongoConfig:
+    def __init__(self, host, port, username, password, database):
+        self.host = host
+        self.port = port
+        self.username = username
+        self.password = password
+        self.database = database
+
+
+class RedisConfig:
+    def __init__(self, host, port, password):
+        self.host = host
+        self.port = port
+        self.password = password

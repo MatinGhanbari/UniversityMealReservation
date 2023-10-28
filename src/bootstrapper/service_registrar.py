@@ -1,21 +1,24 @@
 from src.data_access.repositories.user_repository import UserRepository
+from src.domain.user import User
 from src.infrastructure.config import Config, MongoConfig, RedisConfig
 from src.infrastructure.logger import Logger
+from src.main import container
 
 
 class ServiceRegistrar:
-    def __init__(self, container):
-        self.container = container
 
-    def register_services(self):
-        # Register the Config class
-        self.container.register(Config, lambda: Config().load())
-        self.container.register(Logger, lambda: Logger("UniversityMealReservation"))
-        self.container.register(UserRepository, lambda: UserRepository())
-        mongo_configs = self.container.resolve(Config)['mongo']
-        self.container.register(MongoConfig, lambda: MongoConfig(mongo_configs['host'], mongo_configs['port'],
-                                                                 mongo_configs['username'], mongo_configs['password'],
-                                                                 mongo_configs['database']))
-        redis_configs = self.container.resolve(Config)['redis']
-        self.container.register(RedisConfig, lambda: RedisConfig(redis_configs['host'], redis_configs['port'],
-                                                                 redis_configs['password']))
+    @staticmethod
+    def register_services():
+        container.register(Config, lambda: Config().load())
+        container.register(Logger, lambda: Logger("UniversityMealReservation"))
+        container.register(User, lambda: User())
+        mongo_configs = container.resolve(Config).mongo
+        container.register(MongoConfig, lambda: MongoConfig(mongo_configs['host'], mongo_configs['port'],
+                                                            mongo_configs['username'], mongo_configs['password'],
+                                                            mongo_configs['database']))
+        redis_configs = container.resolve(Config).redis
+        container.register(RedisConfig, lambda: RedisConfig(redis_configs['host'], redis_configs['port'],
+                                                            redis_configs['password']))
+
+        container.register(UserRepository, lambda: UserRepository(container.resolve(MongoConfig),
+                                                                  container.resolve(RedisConfig)))

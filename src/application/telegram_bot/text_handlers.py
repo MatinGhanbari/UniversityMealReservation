@@ -3,8 +3,10 @@ from telegram import Update
 from telegram.ext import MessageHandler, filters, ContextTypes
 
 from src.application.telegram_bot.constants.messages import back, welcome, unknown_command
+from src.bootstrapper.service_registrar import container
+from src.domain.user import User
 
-
+user = container.resolve(User)
 def register_text_handlers(app):
     app.add_handler(MessageHandler(filters.TEXT, handle_message))
 
@@ -12,6 +14,8 @@ def register_text_handlers(app):
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     message_type: str = update.message.chat.type
     text: str = update.message.text
+
+    user.save(update)
 
     response = unknown_command
     if text == back:
